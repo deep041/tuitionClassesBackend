@@ -3,7 +3,6 @@ const student = require('../modals').student;
 const login = async (req, res, next) => {
 
     await student.findOne({'email': req.body.email, 'password': req.body.password}).then((result, err) => {
-        // console.log(result, err);
         if (result) {
             res.send({message: 'Login Successfully', data: result, status: 200});
         } else {
