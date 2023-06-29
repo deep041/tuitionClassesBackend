@@ -2,8 +2,16 @@ const student = require('../modals').student;
 
 const login = async (req, res, next) => {
 
+    // .aggregate([{
+    //     '$lookup': {
+    //       'from': 'fees', 
+    //       'localField': '_id', 
+    //       'foreignField': 'studentId',
+    //       'as': 'result'
+    //     }
+    //   }])
+
     await student.findOne({'email': req.body.email, 'password': req.body.password}).then((result, err) => {
-        // console.log(result, err);
         if (result) {
             res.send({message: 'Login Successfully', data: result, status: 200});
         } else {
