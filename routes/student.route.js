@@ -3,7 +3,8 @@ const router = express.Router();
 const student = require('../controllers').student;
 
 router.get('/', student.getAllStudents);
-router.post('/', student.addStudent);
+// router.post('/', student.addStudent);
+router.get('/:id', student.getStudentDetails);
 router.post('/classWiseStudents', student.classWiseStudents);
 
 module.exports = router;
