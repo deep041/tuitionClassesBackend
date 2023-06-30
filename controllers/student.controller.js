@@ -12,7 +12,8 @@ const getAllStudents = async (req, res, next) => {
 // }
 
 const classWiseStudents = async (req, res, next) => {
-    const students = await student.find({'class': '12-A'});
+    console.log(req.params.id);
+    const students = await student.find({'class': req.params.id});
     res.send({ message: 'Data retrieve successfully!!', data: students, status: 200 })
 }
 
