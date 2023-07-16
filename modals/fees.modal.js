@@ -8,5 +8,10 @@ module.exports = new mongoose.Schema({
     feesPartitions: { type: Number },
     createdAt: { type: Date },
     updatedAt: { type: Date },
-    fees: { type: Object }
+    fees: { type: Object },
+    type: { type: String },
+    isPaid: { type: Boolean },
+    razorpay_order_id: { type: String },
+    razorpay_payment_id: { type: String },
+    razorpay_signature: { type: String }
 })
