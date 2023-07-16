@@ -19,5 +19,6 @@ module.exports = new mongoose.Schema({
     presentSchool: { type: String },
     previousResult: { type: String },
     password: { type: String },
-    token: { type: String }
+    token: { type: String },
+    batch: { type: String }
 })
