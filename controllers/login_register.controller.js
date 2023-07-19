@@ -40,7 +40,8 @@ const register = async (req, res, next) => {
         parentsOccupationAddress: req.body.parentsOccupationAddress,
         presentSchool: req.body.presentSchool,
         previousResult:req.body.previousResult,
-        password: req.body.password
+        password: req.body.password,
+        batch: req.body.batch
     }
 
     await student.findOne({'email': req.body.email}).then((result, err) => {
